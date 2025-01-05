@@ -1,8 +1,9 @@
-"use client";
+
 import React from "react";
 import CommentSection from "@/components/commentsec";
 import AuthorCard from "@/components/authorcard";
 import Image from "next/image";
+
 
 const posts =[
     {
@@ -78,8 +79,8 @@ const posts =[
         image:"/images/lamp.jpeg"
       },
 ]
-export default function Post({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function Post({ params }:{params:Promise<{id:string}>} ) {
+  const { id } = (await params);
   const post = posts.find((p) => p.id ===id);
   if (!post) {
     return (

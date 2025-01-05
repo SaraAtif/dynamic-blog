@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { Card, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input"
@@ -14,7 +15,7 @@ interface CommentSectionProps {
     postId: string
 }
 
-export default function CommentSection({ postId }: CommentSectionProps) {
+export default function CommentSection({ }: CommentSectionProps) {
     const [comments, setComments] = useState<Comment[]>([]);
     const [newComment, setNewComment] = useState('');
     const [authorName, setAuthorName] = useState('');
